@@ -67,9 +67,11 @@ class Simulation:
             for i in range(self.population - self.sick_population):
                 ag_x = random.randint(0, self.canvas_size[0] - self.ui_space)
                 ag_y = random.randint(0, self.canvas_size[1])
+                m_d_s_x = 75
+                m_d_s_y = 50
 
                 for shop in self.shop_list:
-                    while ag_x >= shop.x1 and ag_x <= shop.x2 and ag_y >= shop.y1 and ag_y <= shop.y2:
+                    while ag_x >= (shop.x1 - m_d_s_x) and ag_x <= (shop.x2 + m_d_s_x) and ag_y >= (shop.y1 - m_d_s_y) and ag_y <= (shop.y2 + m_d_s_y):
                         ag_x = random.randint(0, self.canvas_size[0] - self.ui_space)
                         ag_y = random.randint(0, self.canvas_size[1])
 
